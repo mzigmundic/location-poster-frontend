@@ -12,8 +12,8 @@ const PLACES = [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Rakitovica.jpg/1200px-Rakitovica.jpg",
         address: "Croatia",
         location: {
-            lat: "45.7187104",
-            lng: "18.159498",
+            lat: 45.7187104,
+            lng: 18.159498,
         },
         creator: "u1",
     },
@@ -25,8 +25,8 @@ const PLACES = [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Rakitovica.jpg/1200px-Rakitovica.jpg",
         address: "Croatia",
         location: {
-            lat: "45.7187104",
-            lng: "18.159498",
+            lat: 45.7187104,
+            lng: 18.159498,
         },
         creator: "u2",
     },
