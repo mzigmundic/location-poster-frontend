@@ -19,7 +19,7 @@ const PLACES = [
     },
     {
         id: "p2",
-        title: "Rakitovica",
+        title: "Rakitovica2",
         description: "Selo u kojem se sve moguce",
         imageUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Rakitovica.jpg/1200px-Rakitovica.jpg",

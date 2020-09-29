@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
+import Card from "../../shared/components/UIElements/Card";
 import {
     VALIDATOR_REQUIRE,
     VALIDATOR_MINLENGTH,
@@ -26,7 +27,7 @@ const PLACES = [
     },
     {
         id: "p2",
-        title: "Rakitovica",
+        title: "Rakitovica2",
         description: "Selo u kojem se sve moguce",
         imageUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Rakitovica.jpg/1200px-Rakitovica.jpg",
@@ -57,22 +58,25 @@ const UpdatePlace = () => {
         false
     );
 
-    const identifiedPlace = PLACES.find((p) => (p.id = placeId));
+    const identifiedPlace = PLACES.find((p) => p.id === placeId);
 
     useEffect(() => {
-        setFormData(
-            {
-                title: {
-                    value: identifiedPlace.title,
-                    isValid: true,
+        if (identifiedPlace) {
+            setFormData(
+                {
+                    title: {
+                        value: identifiedPlace.title,
+                        isValid: true,
+                    },
+                    description: {
+                        value: identifiedPlace.description,
+                        isValid: true,
+                    },
                 },
-                description: {
-                    value: identifiedPlace.description,
-                    isValid: true,
-                },
-            },
-            true
-        );
+                true
+            );
+        }
+
         setIsLoading(false);
     }, [setFormData, identifiedPlace]);
 
@@ -84,7 +88,9 @@ const UpdatePlace = () => {
     if (!identifiedPlace) {
         return (
             <div className="center">
-                <h2>Could not find place</h2>
+                <Card>
+                    <h2>Could not find place</h2>
+                </Card>
             </div>
         );
     }
